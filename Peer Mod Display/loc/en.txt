@@ -1,0 +1,9 @@
+{
+	"peer_mod_display_title" : "Peer Mod Display"
+	"peer_mod_display_desc" : ""
+
+	"list_pos_y_title" : "Mod list vertical position"
+	"list_pos_y_desc" : "Move the mod list up and down."
+	"list_scale_title" : "Scale"
+	"list_scale_desc" : "Change the size of the mod list."
+}

@@ -1,0 +1,32 @@
+  {
+	"menu_id": "peer_mod_display_menu",
+	"parent_menu_id": "blt_options",
+	"title": "peer_mod_display_title",
+	"description": "peer_mod_display_desc",
+	"items": [
+		{
+		    "type": "slider",
+			"id": "list_pos_y_slider",
+			"title": "list_pos_y_title",
+			"description": "list_pos_y_desc",
+			"callback": "callback_list_pos_y",
+			"value": "list_pos_y",
+			"max": 500,
+            "min": 0,
+            "step": 10,
+            "default_value": 0
+		},
+		{
+		    "type": "slider",
+			"id": "list_scale_slider",
+			"title": "list_scale_title",
+			"description": "list_scale_desc",
+			"callback": "callback_list_scale",
+			"value": "list_scale",
+			"max": 1,
+            "min": 0.5,
+            "step": 0.05,
+            "default_value": 1
+		}
+	]
+}
