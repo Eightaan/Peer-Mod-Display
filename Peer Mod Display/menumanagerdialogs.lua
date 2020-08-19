@@ -56,9 +56,7 @@ function MenuManager:show_person_joining(id, nick, join_start)
 	end
 	
 	local dialog_data = {
-		title = managers.localization:text("dialog_dropin_title", {
-			USER = string.upper("(" .. (peer:rank() > 0 and managers.experience:rank_string(peer:rank()) .. "-" or "") .. peer:level() .. ") " .. nick)
-		}),
+		title = string.upper("(" .. (peer:rank() > 0 and managers.experience:rank_string(peer:rank()) .. "-" or "") .. peer:level() .. ") " .. nick),
 		text = managers.localization:text("dialog_wait") .. " 0%",
 		id = "user_dropin" .. id,
 		no_buttons = true
