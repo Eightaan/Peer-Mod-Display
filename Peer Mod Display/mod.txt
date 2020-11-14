@@ -4,6 +4,7 @@
 	"author" : "Eightan",
 	"version" : "1.2.1",
 	"blt_version" : 2,
+	"priority" : 1,	
 	"image" : "icon.png",
 	"color" : "0.15 0.15 0.15",
 	"hooks" : [
