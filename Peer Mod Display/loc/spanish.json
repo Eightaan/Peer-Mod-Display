@@ -1,0 +1,9 @@
+{
+	"peer_mod_display_title" : "Peer Mod Display",
+	"peer_mod_display_desc" : "Muestra los mods de los jugadores cuando se están conectando.",
+
+	"list_pos_y_title" : "Posición vertical de la lista de mods",
+	"list_pos_y_desc" : "Mueve la lista de mods hacia arriba y hacia abajo.",
+	"list_scale_title" : "Escala",
+	"list_scale_desc" : "Cambia el tamaño de la lista de mods."
+}

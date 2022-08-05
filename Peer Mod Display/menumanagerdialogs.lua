@@ -1,6 +1,6 @@
 local close_person_joining_original = MenuManager.close_person_joining
-local show_person_joining_original = MenuManager.show_person_joining
-function MenuManager:show_person_joining(id, nick, join_start, ...)
+
+function MenuManager:show_person_joining(id, nick, join_start)
 	if not managers.hud or not managers.hud:script(PlayerBase.PLAYER_INFO_HUD_FULLSCREEN_PD2) or managers.hud:script(PlayerBase.PLAYER_INFO_HUD_FULLSCREEN_PD2).panel:child("user_dropin" .. id) then
 		return
 	end
@@ -54,7 +54,15 @@ function MenuManager:show_person_joining(id, nick, join_start, ...)
 		self._joining_queue = self._joining_queue or {}
 		table.insert(self._joining_queue, {id = id, nick = nick, join_start = os.clock()})
 	end
-	show_person_joining_original(self, id, nick, join_start, ...)
+	
+	local dialog_data = {
+		title = string.upper("(" .. (peer:rank() > 0 and managers.experience:rank_string(peer:rank()) .. "-" or "") .. peer:level() .. ") " .. nick),
+		text = managers.localization:text("dialog_wait") .. " 0%",
+		id = "user_dropin" .. id,
+		no_buttons = true
+	}
+
+	managers.system_menu:show(dialog_data)
 end
 	
 function MenuManager:close_person_joining(id, ...)

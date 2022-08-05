@@ -23,10 +23,20 @@ if not _G.PeerModDisplay then
     function PeerModDisplay:GetOption(id)
 	    return self._data[id]
     end
-
-    Hooks:Add("LocalizationManagerPostInit", "LocalizationManagerPostInit_PeerModDisplay", function( loc )
-	    loc:load_localization_file( PeerModDisplay._path .. "loc/en.txt")
-    end)
+	
+	Hooks:Add("LocalizationManagerPostInit", "LocalizationManagerPostInit_PeerModDisplay", function( loc )
+		local localization = PeerModDisplay._path .. "loc/"
+		local GetFiles = _G.file.GetFiles
+		local Idstring = _G.Idstring
+		local activelanguagekey = SystemInfo:language():key()
+		for __, filename in ipairs(GetFiles(localization)) do
+			if Idstring(filename:match("^(.*).json$") or ""):key() == activelanguagekey then
+				loc:load_localization_file(localization .. filename)
+				break
+			end
+		end
+		loc:load_localization_file(localization .. "english.json", false)
+	end)
 
     Hooks:Add( "MenuManagerInitialize", "MenuManagerInitialize_PeerModDisplay", function( menu_manager )
 
