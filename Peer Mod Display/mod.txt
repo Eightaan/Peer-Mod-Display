@@ -2,7 +2,7 @@
 	"name" : "Peer Mod Display",
 	"description" : "Displays the mods a player has while they are joining",
 	"author" : "Eightan",
-	"version" : "1.2.2",
+	"version" : "1.2.3",
 	"blt_version" : 2,
 	"image" : "icon.png",
 	"color" : "0.15 0.15 0.15",
