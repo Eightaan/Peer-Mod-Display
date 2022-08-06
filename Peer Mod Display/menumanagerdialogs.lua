@@ -54,9 +54,10 @@ function MenuManager:show_person_joining(id, nick, join_start)
 		self._joining_queue = self._joining_queue or {}
 		table.insert(self._joining_queue, {id = id, nick = nick, join_start = os.clock()})
 	end
-	
+
+	local level_string, _ = managers.experience:gui_string(peer:level(), peer:rank())
 	local dialog_data = {
-		title = string.upper("(" .. (peer:rank() > 0 and managers.experience:rank_string(peer:rank()) .. "-" or "") .. peer:level() .. ") " .. nick),
+		title = string.upper("(" .. level_string .. ") " .. nick),
 		text = managers.localization:text("dialog_wait") .. " 0%",
 		id = "user_dropin" .. id,
 		no_buttons = true
